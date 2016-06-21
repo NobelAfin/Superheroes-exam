@@ -1,0 +1,19 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: Superheroes_development
+
+test:
+  <<: *default
+  database: Superheroes_test
+
+production:
+  <<: *default
+  database: Superheroes_production
+  username: nobel
+  password: <%= ENV['avatar9005'] %>
